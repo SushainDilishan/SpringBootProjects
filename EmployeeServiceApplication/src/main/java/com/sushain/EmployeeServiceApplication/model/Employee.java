@@ -25,8 +25,8 @@ public class Employee {
     public void setLocation(String location) {
         this.location = location;
     }
-    @JsonIgnore
-    public List<Employee> getAllEmployees(){
+
+    public static List<Employee> getAllEmployees(){
 
         Employee employee =new Employee();
         List<Employee> employees = new ArrayList<>();
