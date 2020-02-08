@@ -5,6 +5,7 @@ import com.sushain.EmployeeServiceApplication.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @RestController
@@ -34,10 +35,14 @@ public class EmployeeController {
 
         return employee.listEmployees();
     }
-    @RequestMapping(value = "/employee/save",method = RequestMethod.POST)
+    @Transactional
+    @RequestMapping(value = "/employees",method = RequestMethod.POST)
     public Employee getEmployees(@RequestBody Employee e){
-        return employeeService.save(e);
+
+         Employee eee = employeeService.save(e);
+         return eee;
     }
+
 
 }
 
