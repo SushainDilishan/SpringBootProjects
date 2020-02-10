@@ -1,6 +1,8 @@
 package com.sushain.EmployeeServiceApplication.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -22,8 +24,9 @@ public class Employee {
     @OneToMany(mappedBy = "employee",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     List<Telephone> telephones;
 
-    @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)//Read about Bag fetch Exceptions
-    @JoinTable( joinColumns = {@JoinColumn(name = "EID", referencedColumnName = "id")},
+    @ManyToMany(cascade = CascadeType.ALL)//Read about Bag fetch Exceptions
+    @LazyCollection(LazyCollectionOption.FALSE)
+       @JoinTable( joinColumns = {@JoinColumn(name = "EID", referencedColumnName = "id")},
             inverseJoinColumns ={@JoinColumn(name = "PID", referencedColumnName = "id")})
     List<Project> projects;
     public Employee() {
