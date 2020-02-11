@@ -20,7 +20,6 @@ public class EmployeeController {
 
         return "<h1>Hello</h1>";
     }
-    
     @RequestMapping("/employee/{id}")
     public Employee getEmployee(@PathVariable int id){
         if (id==10){
@@ -39,7 +38,7 @@ public class EmployeeController {
     public List<Employee> getEmployees(){
        return employeeService.findAllEmp();
     }
-//    @Transactional
+    @Transactional
     @RequestMapping(value = "/employees",method = RequestMethod.POST)
     public Employee getEmployees(@RequestBody Employee e){
 
@@ -49,7 +48,15 @@ public class EmployeeController {
         Employee eee = employeeService.save(e);
         return eee;
     }
+    @RequestMapping("/allocation/{id}")
+    public Employee getAllemployees(@PathVariable int id){
 
+        Employee employee = employeeService.fetchallEmployees(id);
+        return employee;
+
+
+
+    }
 
 }
 

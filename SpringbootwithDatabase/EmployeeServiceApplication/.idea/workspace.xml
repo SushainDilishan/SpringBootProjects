@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="045eb227-6663-4a56-beb2-558e3d6c2c62" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sushain/EmployeeServiceApplication/model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sushain/EmployeeServiceApplication/model/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sushain/EmployeeServiceApplication/model/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sushain/EmployeeServiceApplication/model/Employee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sushain/EmployeeServiceApplication/Controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sushain/EmployeeServiceApplication/Controller/EmployeeController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
