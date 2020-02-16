@@ -1,0 +1,6 @@
+com/sushain/AllocationServiceApplication/AllocationServiceApplication.class
+com/sushain/AllocationServiceApplication/Service/EmployeeService.class
+com/sushain/AllocationServiceApplication/Controller/AllocationController.class
+com/sushain/AllocationServiceApplication/Service/EmployeeServiceImpl.class
+com/sushain/AllocationServiceApplication/Repository/AllocationRepository.class
+com/sushain/AllocationServiceApplication/Model/Allocation.class
