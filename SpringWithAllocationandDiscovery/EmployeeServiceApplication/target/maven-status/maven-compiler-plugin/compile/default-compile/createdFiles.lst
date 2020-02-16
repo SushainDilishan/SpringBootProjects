@@ -1,10 +1,11 @@
 com/sushain/EmployeeServiceApplication/model/Employee.class
+com/sushain/EmployeeServiceApplication/service/EmployeeService.class
+com/sushain/EmployeeServiceApplication/model/Allocation.class
 com/sushain/EmployeeServiceApplication/Repository/EmployeeRepository.class
 com/sushain/EmployeeServiceApplication/Controller/EmployeeController.class
 com/sushain/EmployeeServiceApplication/model/Telephone.class
 com/sushain/EmployeeServiceApplication/model/Project.class
 com/sushain/EmployeeServiceApplication/service/EmployeeServiceImpl.class
 com/sushain/EmployeeServiceApplication/EmployeeServiceApplication.class
-com/sushain/EmployeeServiceApplication/service/EmployeeService.class
+com/sushain/EmployeeServiceApplication/HystrixCommand/AllocationCommand.class
 com/sushain/EmployeeServiceApplication/model/Address.class
-com/sushain/EmployeeServiceApplication/model/Allocation.class

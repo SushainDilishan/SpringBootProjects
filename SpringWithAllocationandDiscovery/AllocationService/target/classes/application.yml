@@ -10,4 +10,4 @@ spring:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
       ddl-auto: update
 server:
-  port: 8090
+  port: 0

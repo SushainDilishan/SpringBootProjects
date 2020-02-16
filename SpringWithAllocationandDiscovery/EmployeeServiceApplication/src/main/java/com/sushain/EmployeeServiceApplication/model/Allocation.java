@@ -13,15 +13,7 @@ public class Allocation {
     String ProjectName;
     String StartDate;
     String EndDate;
-    Allocation Allocation[];
 
-    public com.sushain.EmployeeServiceApplication.model.Allocation[] getAllocation() {
-        return Allocation;
-    }
-
-    public void setAllocation(com.sushain.EmployeeServiceApplication.model.Allocation[] allocation) {
-        Allocation = allocation;
-    }
 
     public Integer getId() {
         return id;

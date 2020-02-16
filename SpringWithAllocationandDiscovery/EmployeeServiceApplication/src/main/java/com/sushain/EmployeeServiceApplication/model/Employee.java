@@ -16,6 +16,17 @@ public class Employee {
     String name;
     String location;
 
+    @Transient
+    Allocation[] allocations;
+
+    public Allocation[] getAllocations() {
+        return allocations;
+    }
+
+    public void setAllocations(Allocation[] allocations) {
+        this.allocations = allocations;
+    }
+
     @OneToOne(cascade = CascadeType.ALL)
     Address address;
 

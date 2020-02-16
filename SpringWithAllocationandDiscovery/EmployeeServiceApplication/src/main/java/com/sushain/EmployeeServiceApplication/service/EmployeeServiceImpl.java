@@ -4,6 +4,7 @@ import com.sushain.EmployeeServiceApplication.Repository.EmployeeRepository;
 import com.sushain.EmployeeServiceApplication.model.Allocation;
 import com.sushain.EmployeeServiceApplication.model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -22,6 +23,7 @@ public class EmployeeServiceImpl implements EmployeeService{
     EmployeeRepository employeeRepository;
 
     @Bean
+    @LoadBalanced
     RestTemplate restTemplate(){
         return new RestTemplate();
     }
@@ -43,7 +45,7 @@ public class EmployeeServiceImpl implements EmployeeService{
             HttpEntity<String> stringHttpEntity = new HttpEntity<>("", new HttpHeaders());
 
             Employee employee1 =employee.get();
-            ResponseEntity<Allocation[]> responseEntity = restTemplate.exchange("http://localhost:8090/services/Map/"+id,
+            ResponseEntity<Allocation[]> responseEntity = restTemplate.exchange("http://AllocationService/services/Map/"+id,
                     HttpMethod.GET,stringHttpEntity, Allocation[].class);
             return  employee1;}
             else return null;
