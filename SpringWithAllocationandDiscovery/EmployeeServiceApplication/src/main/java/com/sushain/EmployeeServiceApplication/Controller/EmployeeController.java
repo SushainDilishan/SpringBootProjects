@@ -13,6 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/services")
 public class EmployeeController {
+
     @Autowired
     EmployeeService employeeService;
     @RequestMapping("hello")
@@ -38,6 +39,7 @@ public class EmployeeController {
     public List<Employee> getEmployees(){
        return employeeService.findAllEmp();
     }
+
     @Transactional
     @RequestMapping(value = "/employees",method = RequestMethod.POST)
     public Employee getEmployees(@RequestBody Employee e){

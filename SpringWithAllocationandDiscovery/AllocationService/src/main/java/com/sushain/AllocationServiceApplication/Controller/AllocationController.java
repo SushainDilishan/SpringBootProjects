@@ -30,6 +30,7 @@ public class AllocationController {
     public List<Allocation> getAllocations(){
         return employeeService.findAllall();
     }
+
     @RequestMapping(value ="/insert",method = RequestMethod.POST)
     public Allocation getAllocation(@RequestBody Allocation allocation) {
         Allocation allocation1 = employeeService.save(allocation);

@@ -1,5 +1,6 @@
 package com.sushain.EmployeeServiceApplication.service;
 
+import com.sushain.EmployeeServiceApplication.HystrixCommand.AllocationCommand;
 import com.sushain.EmployeeServiceApplication.Repository.EmployeeRepository;
 import com.sushain.EmployeeServiceApplication.model.Allocation;
 import com.sushain.EmployeeServiceApplication.model.Employee;
@@ -36,17 +37,24 @@ public class EmployeeServiceImpl implements EmployeeService{
         Employee employee = employeeRepository.save(e);
                 return employee;
     }
+    HttpHeaders httpHeaders = new HttpHeaders();
+    HttpEntity<String> httpEntity = new HttpEntity<>(httpHeaders);
 
+    public Allocation[] fetchAllocation(Employee employee) {
+        AllocationCommand allocationCommand = new AllocationCommand(employee, httpHeaders, restTemplate);
+        return allocationCommand.execute();
+    }
     @Override
     public Employee fetchallEmployees(int id) {
         Optional<Employee> employee =employeeRepository.findById(id);
         if(employee.isPresent()){
 
-            HttpEntity<String> stringHttpEntity = new HttpEntity<>("", new HttpHeaders());
+//            HttpEntity<String> stringHttpEntity = new HttpEntity<>("", new HttpHeaders());
 
             Employee employee1 =employee.get();
-            ResponseEntity<Allocation[]> responseEntity = restTemplate.exchange("http://AllocationService/services/Map/"+id,
-                    HttpMethod.GET,stringHttpEntity, Allocation[].class);
+//            ResponseEntity<Allocation[]> responseEntity = restTemplate.exchange("http://AllocationService/services/Map/"+id,
+//                    HttpMethod.GET,stringHttpEntity, Allocation[].class);
+            employee1.setAllocations(fetchAllocation(employee1));
             return  employee1;}
             else return null;
         }
