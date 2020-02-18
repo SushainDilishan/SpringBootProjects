@@ -16,6 +16,14 @@ public class Telephone {
             @JoinColumn
             @JsonIgnore
     Employee employee;
+    public  Telephone(){
+
+    }
+    public Telephone(Integer id, String telephone, Employee employee) {
+        this.id = id;
+        this.telephone = telephone;
+        this.employee = employee;
+    }
 
     public Integer getId() {
         return id;

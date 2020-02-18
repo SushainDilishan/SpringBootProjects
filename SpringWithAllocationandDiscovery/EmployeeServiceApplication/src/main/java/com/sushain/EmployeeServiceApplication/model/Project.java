@@ -17,6 +17,15 @@ public class Project {
             @JsonIgnore
     List<Employee> employees;
 
+    public Project() {
+    }
+
+    public Project(Integer id, String projects, List<Employee> employees) {
+        this.id = id;
+        this.projects = projects;
+        this.employees = employees;
+    }
+
     public Integer getId() {
         return id;
     }

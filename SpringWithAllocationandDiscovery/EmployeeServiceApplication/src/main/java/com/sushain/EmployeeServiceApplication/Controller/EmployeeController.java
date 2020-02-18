@@ -2,6 +2,7 @@ package com.sushain.EmployeeServiceApplication.Controller;
 
 import com.sushain.EmployeeServiceApplication.model.Address;
 import com.sushain.EmployeeServiceApplication.model.Employee;
+import com.sushain.EmployeeServiceApplication.model.Project;
 import com.sushain.EmployeeServiceApplication.model.Telephone;
 import com.sushain.EmployeeServiceApplication.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,14 +24,18 @@ public class EmployeeController {
     }
     @RequestMapping("/employee/{id}")
     public Employee getEmployee(@PathVariable int id){
-        if (id==10){
+        if (id==2){
             Employee employee = new Employee();
-            employee.setId(10);
+            employee.setId(2);
             employee.setName("Sushain");
             employee.setLocation("Piliyandala");
             Address address = new Address();
             address.setAddress("164/4");
             employee.setAddress(address);
+            Telephone telephone = new Telephone();
+            telephone.setTelephone("08888888");
+            Project project = new Project();
+            project.setProjects("aaaa");
             return employee;
         }else return new Employee();
 
